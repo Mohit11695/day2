@@ -4,4 +4,6 @@ This is new update with user mohit21
 These are changes with featureOne branch
 
 These are changes for featureOne rev 02
-These are chnaged in the master for conflict
+
+
+Chnage in the file for conflict
