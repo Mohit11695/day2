@@ -4,96 +4,169 @@ Problem Statement:
 •	In a newly created repository, demonstrate the ability to change a file from untracked status to tracked and later unstage the file so that it becomes “untracked” again
  
 
-
-
-comp@DESKTOP-OLRV8LH MINGW64 ~
-$ cd f:/CDACProgram/module9sdm
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
-$ mkdir day2
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
-$ cs day2
-bash: cs: command not found
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
-$ cd day2
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2
-$ vi file2.txt
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2
-$ git init
-Initialized empty Git repository in F:/CDACProgram/module9SDM/day2/.git/
-
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
 $ git status
 On branch master
-
-No commits yet
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-        file2.txt
+        file4.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
 $ git add *
-warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'file4.txt', LF will be replaced by CRLF the next time Git touches it
 
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
 $ git status
 On branch master
-
-No commits yet
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
 
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-        new file:   file2.txt
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file4.txt
 
 
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
-$ git commit
-[master (root-commit) 14825fe] This rev01 we are for day2
- 1 file changed, 2 insertions(+)
- create mode 100644 file2.txt
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
-$ git log
-commit 14825fe451b11b9a0114ca330f3b916bd6047fc7 (HEAD -> master)
-Author: mohit <mohit11695@gmail.com>
-Date:   Tue Aug 2 16:34:32 2022 +0530
-
-    This rev01 we are for day2
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
-$ ls
-file2.txt
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
-$ vi file2.txt
+$ git restore --staged file4.txt
 
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
 $ git status
 On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   file2.txt
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
 
-no changes added to commit (use "git add" and/or "git commit -a")
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
 
 comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
-$ ^C
-
-comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$
 
 ****************************************************************************************************************
 
 •	After making a couple of commits, modify the global settings for name and email and make a couple of additional commits. View the history of the commits, which will display the old and new configurations. Later reconfigure Git to ignore files with .txt extension and add two files a.txt and b.txt into the repository
 
 
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git config --global user.name "mohit21"
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git config --global user.email "mohit2111695@gmail"
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ vi file3.txt
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git log
+commit ba2b81d4e9174d687a10610b7a0879bd0c4c18ea (HEAD -> master)
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:47:22 2022 +0530
+
+    This is commit for file4
+
+    This reverts commit 16f427c41b822cdbb9db24cd996c3150357dbcfb.
+
+commit 8a73c5bf952c4c24b8699b8f0719ddc5e6d3f646
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:30:58 2022 +0530
+
+    Revert "This is new commit"
+
+    This reverts commit 16f427c41b822cdbb9db24cd996c3150357dbcfb.
+
+commit 16f427c41b822cdbb9db24cd996c3150357dbcfb
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:18:58 2022 +0530
+
+    This is new commit
+
+commit bb588371ceb92d460c5487d27d0f9ff11fbe53aa (origin/master, tester, dev)
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 17:10:20 2022 +0530
+
+    This is rev02
+
+commit 1a3c189044f2ad25571678c4ffbf47e6f4a00439
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 17:04:19 2022 +0530
+
+    This nw user mohit raj
+
+commit 4c351c7b43a66a09192683d6d8cc874d2c50c632
+Author: mohit <mohit11695@gmail.com>
+Date:   Tue Aug 2 16:42:06 2022 +0530
+
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git add *
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git commit
+[master 3ed206c] This is upate with user mohit21
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git log
+commit 3ed206c3e15f5a375b14627cc56ed6b3c321a297 (HEAD -> master)
+Author: mohit21 <mohit2111695@gmail>
+Date:   Tue Aug 2 20:58:32 2022 +0530
+
+    This is upate with user mohit21
+
+commit ba2b81d4e9174d687a10610b7a0879bd0c4c18ea
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:47:22 2022 +0530
+
+    This is commit for file4
+
+    This reverts commit 16f427c41b822cdbb9db24cd996c3150357dbcfb.
+
+commit 8a73c5bf952c4c24b8699b8f0719ddc5e6d3f646
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:30:58 2022 +0530
+
+    Revert "This is new commit"
+
+    This reverts commit 16f427c41b822cdbb9db24cd996c3150357dbcfb.
+
+commit 16f427c41b822cdbb9db24cd996c3150357dbcfb
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 20:18:58 2022 +0530
+
+    This is new commit
+
+commit bb588371ceb92d460c5487d27d0f9ff11fbe53aa (origin/master, tester, dev)
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 17:10:20 2022 +0530
+
+    This is rev02
+
+commit 1a3c189044f2ad25571678c4ffbf47e6f4a00439
+Author: mohitRaj <mohit11695@gmail.com>
+Date:   Tue Aug 2 17:04:19 2022 +0530
 
 
 
@@ -101,6 +174,14 @@ comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
 Problem Statement: 
 Create a branch “featureOne” and view the commit history in this branch. Make a change to a file and merge it back into the master branch. Then, make simultaneous changes to the same file to cause conflict and do the merge again
 
+
+
+
+
+
+
+
+*************************************************************************************************************
 Problem Statement: 
 Create a branch “featureOne” and view the commit history in this branch. Make a change to a file and merge it back into the master branch. Then, make simultaneous changes to the same file to cause conflict and do the merge again.
 
