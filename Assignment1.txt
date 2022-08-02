@@ -1,0 +1,109 @@
+Lesson 2 - Assignment 01 - Git Workflow
+
+Problem Statement:
+•	In a newly created repository, demonstrate the ability to change a file from untracked status to tracked and later unstage the file so that it becomes “untracked” again
+ 
+
+
+
+comp@DESKTOP-OLRV8LH MINGW64 ~
+$ cd f:/CDACProgram/module9sdm
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
+$ mkdir day2
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
+$ cs day2
+bash: cs: command not found
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm
+$ cd day2
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2
+$ vi file2.txt
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2
+$ git init
+Initialized empty Git repository in F:/CDACProgram/module9SDM/day2/.git/
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git add *
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file2.txt
+
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git commit
+[master (root-commit) 14825fe] This rev01 we are for day2
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file2.txt
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git log
+commit 14825fe451b11b9a0114ca330f3b916bd6047fc7 (HEAD -> master)
+Author: mohit <mohit11695@gmail.com>
+Date:   Tue Aug 2 16:34:32 2022 +0530
+
+    This rev01 we are for day2
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ ls
+file2.txt
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ vi file2.txt
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+$ ^C
+
+comp@DESKTOP-OLRV8LH MINGW64 /f/CDACProgram/module9sdm/day2 (master)
+
+****************************************************************************************************************
+
+•	After making a couple of commits, modify the global settings for name and email and make a couple of additional commits. View the history of the commits, which will display the old and new configurations. Later reconfigure Git to ignore files with .txt extension and add two files a.txt and b.txt into the repository
+
+
+
+
+
+*****************************************************************************************************************
+Problem Statement: 
+Create a branch “featureOne” and view the commit history in this branch. Make a change to a file and merge it back into the master branch. Then, make simultaneous changes to the same file to cause conflict and do the merge again
+
+Problem Statement: 
+Create a branch “featureOne” and view the commit history in this branch. Make a change to a file and merge it back into the master branch. Then, make simultaneous changes to the same file to cause conflict and do the merge again.
+
+Problem Statement: 
+Push the contents of the local repository into the remote repository. Update a file in the remote repository and then pull the changes into the local repository. Subsequently modify the file locally and push the change to the remote repository
+
